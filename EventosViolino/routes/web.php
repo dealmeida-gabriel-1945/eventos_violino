@@ -12,5 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('inicio');
+})->name('inicio');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+/*ROTAS MUSICA*/
+Route::post('/pesquisa_musica', 'PesquisaController@pesquisa_musica')->name('pesquisa.musica');

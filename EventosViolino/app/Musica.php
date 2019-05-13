@@ -10,9 +10,13 @@ class Musica extends Model
         'nome', 'observacao', 'usuario_id',
     ];
 
+    protected $table = "musica";
+
+    protected $primaryKey = 'id';
+
     public function usuario()
     {
-    	return $this->belongsTo('App\Usuario');
+    	return $this->belongsTo('App\User');
     }
     public function versoes()
     {

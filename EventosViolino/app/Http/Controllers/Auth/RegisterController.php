@@ -49,9 +49,32 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'nome' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'senha' => ['required', 'string', 'min:8', 'confirmed'],
+            'nome'  => ['required', 'string', 'max:75'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:usuario'],
+            'password' => ['required', 'string', 'min:8', 'max:50', 'confirmed'],
+            'cpf'   => ['required', 'string', 'min:14', 'max:14', 'unique:usuario'],
+        ],[
+            'nome.required'     =>'Nome é obrigatório.',
+            'nome.string'       =>'Nome deve ser um texto.',
+            'nome.max'          =>'Nome só pode conter até 75 caracteres.',
+
+            'email.required'    =>'Email é obrigatório.',
+            'email.string'      =>'Email deve ser um texto.',
+            'email.email'       =>'Email deve ser um email válido.',
+            'email.max'         =>'Email pode conter só até 255 caracteres.',
+            'email.unique'      =>'Email já está sendo utilizado.',
+
+            'password.required'    =>'Senha é obrigatório.',
+            'password.string'      =>'Senha deve ser um texto.',
+            'password.min'         =>'Senha deve ter pelo menos 8 caracteres.',
+            'password.max'         =>'Senha só pode conter até 50 caracteres.',
+            'password.confirmed'   =>'Senha deve bater com a outra digitada.',
+
+            'cpf.required'      =>'CPF é obrigatório.',
+            'cpf.string'        =>'CPF deve ser um texto.',
+            'cpf.min'           =>'CPF deve ter pelo menos 14 caracteres.',
+            'cpf.max'           =>'CPF pode conter só até 14 caracteres.',
+            'cpf.unique'        =>'CPF já cadastrado.'
         ]);
     }
 
@@ -64,9 +87,13 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'nome' => $data['name'],
+            'nome' => $data['nome'],
             'email' => $data['email'],
             'senha' => Hash::make($data['password']),
+            'cpf'   => $data['cpf'],
+            'nome_arquivo'=>"N/A",
+            'is_admin'=>0,
+            'is_ativa'=>1,
         ]);
     }
 }

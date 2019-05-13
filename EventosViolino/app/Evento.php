@@ -15,7 +15,7 @@ class Evento extends Model
 
 	public function usuario()
 	{
-		return $this->belongsTo('App\Usuario');
+		return $this->belongsTo('App\User');
 	}
 	public function endereco()
 	{
