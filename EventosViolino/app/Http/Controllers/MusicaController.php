@@ -3,9 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Musica;
+use Auth;
 
 class MusicaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,8 @@ class MusicaController extends Controller
      */
     public function index()
     {
-        //
+        $musicas = Auth::user()->musicas();
+        return view('cadastros_diversos.musica.index', ['musicas'=>$musicas]);
     }
 
     /**

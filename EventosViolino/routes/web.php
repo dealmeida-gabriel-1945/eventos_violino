@@ -22,8 +22,10 @@ Auth::routes();
 
 /*ROTAS USER*/ //user.remove_foto
 Route::resource('/user','UserController');
-Route::get('/user/remove_foto', 'UserController@removeFoto')->name('user.remove_foto');
+Route::post('/user/muda_foto', 'UserController@mudaFoto')->name('user.muda_foto');
+Route::post('/user/remove_foto', 'UserController@removeFoto')->name('user.remove_foto');
 
 
 /*ROTAS MUSICA*/
+Route::resource('/musica','MusicaController');
 Route::post('/pesquisa_musica', 'PesquisaController@pesquisa_musica')->name('pesquisa.musica');
