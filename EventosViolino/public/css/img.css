@@ -1,0 +1,15 @@
+.img-user
+{
+	height: 50px;
+	width: 50px;
+	border: solid 1.6px black;
+	border-radius: 20px;
+	margin-top: 5px;
+}
+.img-profile
+{
+	height: 100%;
+	width: 100%;
+	border: solid 1.6px black;
+	margin-top: 5px;
+}

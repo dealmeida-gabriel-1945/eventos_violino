@@ -8,6 +8,8 @@
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/botoes.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/texts.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/inputs.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/img.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/forms.css') }}" />
 		@yield('links_ads')
 	</head>
 	<body>
@@ -24,7 +26,7 @@
 							<a href="#" class="btn btn-item">Meus Eventos</a>
 						</div>
 					</div>
-					<div class="col-l col-1 pula-0p5">
+					<div class="col-l col-2 pula-0p5">
 						<div class="center-y">
 							<a href="#" class="btn btn-item">Minhas Músicas</a>
 						</div>
@@ -40,7 +42,7 @@
 					@if(Auth::user()!=null)
 						@if(Auth::user()->nome_arquivo!="N/A")
 						<a href="{{route('user.show',Auth::user()->id)}}">
-							<img src="{{url('storage/users_img/'.Auth::user()->nome_arquivo)}}">
+							<img class="img-user" src="{{url('storage/users_img/'.Auth::user()->nome_arquivo)}}">
 						</a>
 						@else
 						<a href="{{route('user.show',Auth::user()->id)}}">

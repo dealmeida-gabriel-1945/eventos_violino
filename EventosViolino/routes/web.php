@@ -20,8 +20,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 
-/*ROTAS MUSICA*/
+/*ROTAS USER*/ //user.remove_foto
 Route::resource('/user','UserController');
+Route::get('/user/remove_foto', 'UserController@removeFoto')->name('user.remove_foto');
 
 
 /*ROTAS MUSICA*/

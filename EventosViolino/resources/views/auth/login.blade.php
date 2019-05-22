@@ -33,7 +33,7 @@
 
         <div class="linha">
             <div class="col-4 pula-3">
-                <button type="submit" class="btn">
+                <button type="submit" class="btn btn-blue">
                     {{ __('Login') }}
                 </button>
 

@@ -52,7 +52,6 @@ class RegisterController extends Controller
             'nome'  => ['required', 'string', 'max:75'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:usuario'],
             'password' => ['required', 'string', 'min:8', 'max:50', 'confirmed'],
-            'cpf'   => ['required', 'string', 'min:14', 'max:14', 'unique:usuario'],
         ],[
             'nome.required'     =>'Nome é obrigatório.',
             'nome.string'       =>'Nome deve ser um texto.',
@@ -69,12 +68,6 @@ class RegisterController extends Controller
             'password.min'         =>'Senha deve ter pelo menos 8 caracteres.',
             'password.max'         =>'Senha só pode conter até 50 caracteres.',
             'password.confirmed'   =>'Senha deve bater com a outra digitada.',
-
-            'cpf.required'      =>'CPF é obrigatório.',
-            'cpf.string'        =>'CPF deve ser um texto.',
-            'cpf.min'           =>'CPF deve ter pelo menos 14 caracteres.',
-            'cpf.max'           =>'CPF pode conter só até 14 caracteres.',
-            'cpf.unique'        =>'CPF já cadastrado.'
         ]);
     }
 
@@ -90,7 +83,6 @@ class RegisterController extends Controller
             'nome' => $data['nome'],
             'email' => $data['email'],
             'senha' => Hash::make($data['password']),
-            'cpf'   => $data['cpf'],
             'nome_arquivo'=>"N/A",
             'is_admin'=>0,
             'is_ativa'=>1,

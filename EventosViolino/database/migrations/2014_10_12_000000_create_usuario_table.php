@@ -20,8 +20,6 @@ class CreateUsuarioTable extends Migration
             $table->boolean('is_ativa');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('telefone', 16)->nullable();
-            $table->string('cpf', 14)->unique();
             $table->text('nome_arquivo');
             $table->string('senha');
             

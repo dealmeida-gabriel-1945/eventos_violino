@@ -19,6 +19,16 @@
 	color: white;
 }
 
+.btn-blue
+{
+	background-color: blue;
+	color: white;
+}
+.btn-yellow
+{
+	background-color: yellow;
+}
+
 .btn-submit
 {
 	border: solid 1px #c4c4c4;

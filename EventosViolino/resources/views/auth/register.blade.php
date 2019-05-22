@@ -44,14 +44,6 @@
         </div>
         <div class="linha">
             <div class="col-4 pula-3">
-                <label for="cpf" class="">CPF:*</label>
-                <div>
-                    <input id="cpf" type="text" class="input-txt input-100" name="cpf" placeholder="xxx.xxx.xxx-xx" required>
-                </div>
-            </div>
-        </div>
-        <div class="linha">
-            <div class="col-4 pula-3">
                 @if($errors->any())
                     <p class="msg-erro">{{$errors->first()}}</p>
                 @endif
