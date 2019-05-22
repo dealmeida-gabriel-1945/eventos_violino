@@ -19,43 +19,6 @@
     justify-content: center;
 }
 
-.input-txt
-{
-	padding: 5px 5px 5px 5px;
-	border-radius: 8px;
-	border: solid 1px #c4c4c4;
-}
-.input-100
-{
-	width: 100%;
-}
-.btn
-{
-	padding: 5px 5px 5px 5px;
-	border-radius: 8px;
-}
-.btn-item
-{
-	border: solid 1px black;
-}
-.btn-red
-{
-	background-color: red;
-	color: white;
-}
-.btn-green
-{
-	background-color: green;
-	color: white;
-}
-
-.btn-submit
-{
-	border: solid 1px #c4c4c4;
-}
-.span-layout
-{
-}
 .logo-main
 {
 	height: 60px;
@@ -74,8 +37,4 @@
 {
 	font-size: 0.5em;
 	margin: 7px 7px 7px 7px;
-}
-.msg-erro
-{
-	color: red;
 }

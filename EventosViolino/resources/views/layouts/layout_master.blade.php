@@ -5,6 +5,9 @@
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/master_elementos.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/master_classes.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/tabela_posicoes.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/botoes.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/texts.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/inputs.css') }}" />
 		@yield('links_ads')
 	</head>
 	<body>
@@ -21,7 +24,7 @@
 							<a href="#" class="btn btn-item">Meus Eventos</a>
 						</div>
 					</div>
-					<div class="col-l col-1">
+					<div class="col-l col-1 pula-0p5">
 						<div class="center-y">
 							<a href="#" class="btn btn-item">Minhas Músicas</a>
 						</div>
@@ -36,11 +39,11 @@
 				<div class=" col-r col-1">
 					@if(Auth::user()!=null)
 						@if(Auth::user()->nome_arquivo!="N/A")
-						<a href="#">
+						<a href="{{route('user.show',Auth::user()->id)}}">
 							<img src="{{url('storage/users_img/'.Auth::user()->nome_arquivo)}}">
 						</a>
 						@else
-						<a href="#">
+						<a href="{{route('user.show',Auth::user()->id)}}">
 							<img class="img-user" src="{{url('storage/default_images/user_default.png')}}">
 						</a>
 						@endif

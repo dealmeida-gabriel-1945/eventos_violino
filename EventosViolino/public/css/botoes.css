@@ -1,0 +1,25 @@
+.btn
+{
+	padding: 5px 5px 5px 5px;
+	border-radius: 8px;
+	text-align: center;
+}
+.btn-item
+{
+	border: solid 1px black;
+}
+.btn-red
+{
+	background-color: red;
+	color: white;
+}
+.btn-green
+{
+	background-color: green;
+	color: white;
+}
+
+.btn-submit
+{
+	border: solid 1px #c4c4c4;
+}
