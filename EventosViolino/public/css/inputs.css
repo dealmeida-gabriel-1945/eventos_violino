@@ -8,3 +8,7 @@
 {
 	width: 100%;
 }
+.txt-area
+{
+	resize: none;
+}

@@ -19,7 +19,7 @@ class MusicaController extends Controller
      */
     public function index()
     {
-        $musicas = Auth::user()->musicas();
+        $musicas = Auth::user()->musicas()->paginate(5);
         return view('cadastros_diversos.musica.index', ['musicas'=>$musicas]);
     }
 
@@ -30,7 +30,7 @@ class MusicaController extends Controller
      */
     public function create()
     {
-        //
+        return view('cadastros_diversos.musica.create');
     }
 
     /**
@@ -41,7 +41,27 @@ class MusicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $regras = [
+            'nome'              => 'required|string|max:50|min:3',
+            'observacao'        => 'nullable|string|max:250',
+        ];
+        $mensagens = [
+            'nome.required'     => 'O nome é obrigatório.',
+            'nome.string'       =>'O nome deve ser um texto.',
+            'nome.min'          =>'O nome deve ter, no mínimo, 3 caracteres.',
+            'nome.max'          =>'O nome deve ter, no máximo, 50 caracteres.',
+
+            'observacao.string'      =>'A observacao deve ser um texto.',
+            'observacao.max'          =>'A observacao deve ter, no máximo, 50 caracteres.',
+        ];
+        $request->validate($regras,$mensagens);
+
+        $musica = new Musica();
+        $musica->nome = $request->nome;
+        $musica->observacao = $request->observacao;
+        $musica->user_id = Auth::user()->id;
+        $musica->save();
+        return redirect()->route('musica.index', Auth::user()->id);
     }
 
     /**

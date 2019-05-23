@@ -11,6 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/img.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/forms.css') }}" />
 		<link rel="stylesheet" type="text/css" href="{{ url('/css/titles.css') }}" />
+		<link rel="stylesheet" type="text/css" href="{{ url('/css/table.css') }}" />
 		@yield('links_ads')
 	</head>
 	<body>

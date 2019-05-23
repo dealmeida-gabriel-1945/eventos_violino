@@ -18,12 +18,12 @@
 				</div>
 				<div class="div-form">
 	                <label for="password">Email:</label>
-	            	<input type="text" id="email" name="email" class="input-txt input-100" value="{{Auth::user()->email}}" requiredautofocus>
+	            	<input type="text" id="email" name="email" class="input-txt input-100" value="{{Auth::user()->email}}" >
 				</div>
 				<div class="div-form">
 	                <label for="password">Senha:</label>
-	            	<input type="password" id="senha" name="senha" class="input-txt input-100" value="" style="display: none;" requiredautofocus>
-	            	<input type="password" id="senha" name="senha" class="input-txt input-100" value="" requiredautofocus>
+	            	<input type="password" id="senha" name="senha" class="input-txt input-100" value="" style="display: none;" >
+	            	<input type="password" id="senha" name="senha" class="input-txt input-100" value="" >
 				</div>
 	            <hr>
 	            @if($errors->any())

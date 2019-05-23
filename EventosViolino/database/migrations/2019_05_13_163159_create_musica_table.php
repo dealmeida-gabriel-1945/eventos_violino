@@ -17,8 +17,8 @@ class CreateMusicaTable extends Migration
             $table->bigIncrements('id');
             $table->string('nome', 50);
             $table->text('observacao', 250)->nullable();
-            $table->unsignedBigInteger('usuario_id');
-            $table->foreign('usuario_id')->references('id')->on('usuario');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('usuario');
             
             $table->timestamps();
         });

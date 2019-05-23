@@ -1,0 +1,22 @@
+.tbl
+{
+	padding: 0px 0px 0px 0px;
+	margin: 0px 0px 0px 0px;
+	border: solid 1px black;
+	border-radius: 20px;
+	line-height: 25px;
+}
+.tbl-100
+{
+	width: 100%;
+}
+.tbl-center
+{
+	text-align: center;
+}
+.tbl-linha
+{
+	margin: 5px 0px 5px 0px;
+	padding: 5px 0px 5px 0px;
+	border: solid 1px black;
+}
